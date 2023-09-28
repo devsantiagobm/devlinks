@@ -1,0 +1,220 @@
+.customize {
+
+
+    &__content {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-areas: "preview preview information information information";
+        column-gap: 24px;
+        margin: 24px 24px 0;
+        // height: 105vh;
+        min-height: 100vh;
+        // max-height: 105vh;
+
+    }
+
+    &__title {
+        margin: 0 0 8px;
+    }
+
+    &__description {
+        margin: 0 0 32px;
+        color: var(--normal-gray);
+        max-width: 60ch;
+    }
+
+    &__preview,
+    &__information {
+        background-color: var(--ultra-light);
+        border-radius: 8px;
+        padding: 24px 3vw;
+    }
+
+    &__preview {
+        grid-area: preview;
+    }
+
+    &__information {
+        grid-area: information;
+    }
+
+    &__plus {
+        font-size: 1.5rem;
+    }
+
+    &__no-links {
+        display: grid;
+        place-items: center;
+        text-align: center;
+        // margin: 10vh 0 0;
+        min-height: 300px;
+    }
+
+    &__divider {
+        margin: 32px 0 0;
+        height: 1px;
+        background-color: var(--borders);
+        border: none;
+
+        &--form{
+            margin: 32px 0 16px;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        // gap: 16px;
+    }
+
+    &__input-box {
+        display: grid;
+        grid-template-columns: 2fr 7fr;
+        gap: 8px;
+        align-items: center;
+        font-size: .9rem;
+        margin: 0 0 16px;
+        
+        &:last-child{
+            margin: 0 0 0;
+        }
+    }
+
+    &__label {
+        position: relative;
+        cursor: text;
+
+        &--image {
+            gap: 8px;
+            padding: 24px;
+            border: 2px var(--normal-gray) dashed;
+            border-radius: 8px;
+            cursor: pointer;
+            overflow: hidden;
+            aspect-ratio: 1;
+            max-width: 50%;
+            width: 200;
+            margin: 24px auto 0;
+            border-radius: 50%;
+            flex-direction: column;
+
+            &::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                z-index: 5;
+                opacity: 0;
+                transition: opacity .2s ease;
+                background-color: #111;
+            }
+
+            &:hover::before {
+                opacity: .8;
+            }
+
+            &:hover .customize__label-box {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__label-box {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+        text-align: center;
+        color: var(--light-purple);
+        font-weight: var(--font-medium);
+        position: relative;
+        opacity: 0;
+        z-index: 10;
+        transition: opacity .2s ease;
+    }
+
+    &__avatar-icon {
+        font-size: 2.2rem;
+    }
+
+    &__avatar {
+        opacity: 1;
+        z-index: 1;
+        aspect-ratio: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        inset: 0;
+        height: auto;
+        width: 100%;
+    }
+
+    &__input {
+        font-weight: var(--font-semi-bold);
+        position: relative;
+        cursor: text;
+        display: flex;
+        align-items: center;
+        padding: 12px 16px;
+        gap: 8px;
+        border: solid 1px var(--borders);
+        border-radius: 8px;
+        font-size: .9rem;
+        overflow: hidden;
+        transition: border-color .3s ease;
+        width: 100%;
+
+        &::placeholder {
+            font-weight: var(--font-regular);
+        }
+
+        &:focus+.customize__border {
+            opacity: 1;
+        }
+
+        &--error+.customize__border {
+            opacity: 1;
+            border-color: var(--red);
+        }
+    }
+
+    &__border {
+        z-index: 0;
+        border: solid 1px var(--normal-gray);
+        border-radius: 8px;
+        opacity: 0;
+        position: absolute;
+        inset: 0;
+        transition: opacity .15s ease, color .15s ease;
+    }
+
+    &__links {
+        margin: 40px 0 0;
+        display: flex;
+        flex-direction: column;
+        // gap: 32px; 
+        // DOESNT UNCOMMENT THIS. THIS SOLUTION GIVES SPACE BETWEEN LINKS, NOT  SPACE IN THE DIRECT LINK. THIS MEANS, WHEN THE LINK IS REMOVED,
+        // THE ANIMATION MAKES A SMALL JUMP, AND ITS BECAUSE OF THIS. THE SOLUTION IS GIVING MARGIN TO THE DIRECT LINKS AND ANIMATING THIS PROPERTY WITH FRAMER MOTION
+    }
+
+    &__error {
+        color: var(--red);
+        font-weight: var(--font-medium);
+        font-size: .9rem;
+        text-align: center;
+        // margin: 16px 0 0;
+    }
+
+    &__succesful {
+        color: var(--green);
+        font-weight: var(--font-medium);
+        font-size: .9rem;
+        // margin: 16px 0 0;
+        text-align: center;
+        // overflow: hidden;
+    }
+}

@@ -1,0 +1,58 @@
+.header {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 3vw;
+    background-color: var(--ultra-light);
+    margin: 24px 24px 0;
+    border-radius: 8px;
+
+
+    &__nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+    }
+
+    &__button {
+        display: flex;
+        align-items: center;
+
+        font-weight: var(--font-semi-bold);
+        align-items: center;
+        color: var(--normal-gray);
+        gap: 6px;
+        padding: 12px 24px;
+        cursor: pointer;
+        position: relative;
+        transition: color .2s ease;
+
+        &--active,
+        &:hover {
+            color: var(--purple);
+        }
+
+    }
+
+    &__button-springer {
+        position: absolute;
+        inset: 0;
+        z-index: 10;
+        border-radius: 8px;
+        background-color: rgb(239 235 255);
+        mix-blend-mode: multiply;
+    }
+
+
+
+    &__icon {
+        font-size: 1.1rem;
+    }
+
+    &__link-box {
+        display: flex;
+        justify-content: flex-end;
+    }
+}

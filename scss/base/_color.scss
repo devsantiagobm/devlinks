@@ -1,0 +1,23 @@
+body {
+    --purple: #633CFF;
+    --purple-hover-color: #BEADFF;
+    --light-purple: #EFEBFF;
+    --normal-gray: #737373;
+    --dark-gray: #333;
+    --light-gray: #FAFAFA;
+    --ultra-light: #fff;
+    --borders: #D9D9D9;
+    --violet: #BEADFF;
+    --red: #FF3939;
+    --green: #22bb33;
+    --skeleton-bg: #e2dddd;
+
+
+    background-color: var(--light-gray);
+
+}
+
+::selection {
+    background-color: var(--purple);
+    color: var(--light-purple);
+}

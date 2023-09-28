@@ -1,0 +1,36 @@
+.cropper {
+    width: 100dvw;
+    height: 100dvh;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    &__box {
+        width: 100%;
+        height: var(--max-height);
+        max-height: 70vh;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        max-width: var(--max-width);
+        border-radius: 8px 8px 0 0;
+    }
+
+    &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        font-size: .9rem;
+        width: 100%;
+        max-width: var(--max-width);
+        // padding: 16px;
+        margin: 0;
+        border-radius: 0 0 8px 8px;
+    }
+}

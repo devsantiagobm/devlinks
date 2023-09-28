@@ -1,0 +1,22 @@
+.skeleton {
+    border-radius: 4px;
+    background-color: var(--skeleton-bg);
+    min-height: 16px;
+    animation: change-opacity 2s linear infinite;
+    user-select: none;
+
+    @keyframes change-opacity {
+
+        0%,
+        100% {
+            background-color: hsl(0, 8%, 88%);
+            color: hsl(0, 8%, 88%);
+        }
+
+        50% {
+            color: hsl(0, 8%, 84%);
+            background-color: hsl(0, 8%, 84%);
+        }
+    }
+
+}
