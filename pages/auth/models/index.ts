@@ -1,4 +1,3 @@
-export * from './formProps';
-export * from '../../../models/framerMotionVariants';
-export * from './input';
-export * from './requestBody';
+export type { FormProps, FormTexts, FormTypes } from './formProps';
+export type { input } from './input';
+export type { RequestBody } from './requestBody';

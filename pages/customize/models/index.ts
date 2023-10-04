@@ -1,2 +1,1 @@
-export * from './index';
-export * from './views.d';
+export type { Views } from './views.d';

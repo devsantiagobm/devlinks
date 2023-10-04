@@ -1,3 +1,2 @@
-export * from './platforms';
-export * from './constants';
-export * from './index';
+export { platforms } from './platforms';
+export { AUTH_ROUTES, NO_AUTH_ROUTES, COOKIES_NAMES } from './constants';

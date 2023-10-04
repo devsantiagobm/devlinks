@@ -1,4 +1,3 @@
-export * from './helpers/getCookie';
-export * from './helpers/isValidToken';
-export * from './index';
-export * from './instances/axios.instance';
+export { getCookie } from './helpers/getCookie';
+export { isValidToken } from './helpers/isValidToken';
+export { axios } from './instances/axios.instance';

@@ -13,7 +13,6 @@ export const COOKIES_NAMES: COOKIES = {
 interface NO_AUTH {
     "/auth/login": string,
     "/auth/signup": string,
-
 }
 
 export const NO_AUTH_ROUTES: NO_AUTH = {

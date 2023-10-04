@@ -1,11 +1,11 @@
 import { MdOutlineMail as EmailIcon } from "react-icons/md"
 import { AiFillLock as LockedIcon } from "react-icons/ai"
-import { input } from "pages/auth/models";
-import { Form } from "pages/auth/components"
+import { input } from "./models";
+import { Form } from "./components"
 
 export default function Login() {
     return (
-        <Form inputs={inputs} type="login" texts={texts} urlRequest={"auth/login"}/>
+        <Form inputs={inputs} type="login" texts={texts} urlRequest={"auth/login"} />
     )
 }
 
