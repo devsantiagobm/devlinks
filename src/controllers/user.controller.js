@@ -9,8 +9,8 @@ async function updateProfile(req = request, res = response) {
         const { name, description } = req.body
 
         // Mongo doesnt allow undefined values, so if the file doesnt come, it means it isnt being updated, so it doesnt have to change
-
         const avatar = req?.file?.filename ? Helpers.getUrl(req) + "/uploads/" + req?.file?.filename : undefined
+
 
         await User.findByIdAndUpdate(userId, { name, description, avatar })
         return res.json({ "message": "Profile updated correctly" })
