@@ -1,4 +1,4 @@
-import { Link } from "../models";
+import { Link } from "models";
 import { useState } from "react"
 
 export function useValidateLinks() {

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { getCookie, axios } from "utilities"
 import { COOKIES_NAMES } from "constant"
-import { type Link } from "../models"
+import { type Link } from "models"
 import { AxiosError } from "axios"
 
 export function useUpdateLinks() {
