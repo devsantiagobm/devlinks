@@ -5,3 +5,4 @@ export { useContextViews } from './useContextViews';
 export { useContextUser } from './useContextUser';
 export { useValidateLinks } from './useValidateLinks';
 export { useUpdateLinks } from './useUpdateLinks';
+export { useGetWidth } from './useGetWidth';

@@ -56,7 +56,7 @@
         background-color: var(--borders);
         border: none;
 
-        &--form{
+        &--form {
             margin: 32px 0 16px;
         }
     }
@@ -74,8 +74,8 @@
         align-items: center;
         font-size: .9rem;
         margin: 0 0 16px;
-        
-        &:last-child{
+
+        &:last-child {
             margin: 0 0 0;
         }
     }
@@ -83,6 +83,8 @@
     &__label {
         position: relative;
         cursor: text;
+        width: 100%;
+
 
         &--image {
             gap: 8px;
@@ -93,7 +95,7 @@
             overflow: hidden;
             aspect-ratio: 1;
             max-width: 50%;
-            width: 200;
+            width: 144px;
             margin: 24px auto 0;
             border-radius: 50%;
             flex-direction: column;
@@ -216,5 +218,32 @@
         // margin: 16px 0 0;
         text-align: center;
         // overflow: hidden;
+    }
+}
+
+
+@mixin customize972 {
+    .customize {
+
+        &__content {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-areas: "information";
+            margin-top: 0;
+        }
+
+    }
+}
+
+
+@mixin customize572 {
+    .customize {
+
+        &__input-box{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
     }
 }

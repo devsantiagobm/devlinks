@@ -18,7 +18,7 @@ export default function Nav() {
                         {view === label && <ActiveButton />}
 
                         <Icon className="header__icon" />
-                        <span>{label} </span>
+                        <span className="header__label">{label} </span>
 
                     </button>
                 ))

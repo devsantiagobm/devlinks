@@ -55,4 +55,52 @@
         display: flex;
         justify-content: flex-end;
     }
+
+    &__link-icon {
+        font-size: 1.5rem;
+        display: none;
+    }
+
+    &__logo--small {
+        display: none;
+    }
+}
+
+
+@mixin header972() {
+    .header {
+        &__label {
+            display: none;
+        }
+
+        &__link-text {
+            display: none;
+        }
+
+        &__link-icon {
+            display: block;
+            font-size: clamp(16px, 5dvw, 24px);
+        }
+
+        &__logo--large {
+            display: none;
+        }
+
+
+        &__link,
+        &__button {
+            padding: 12px;
+            aspect-ratio: 1;
+        }
+
+        &__icon {
+            font-size: clamp(16px, 5dvw, 24px);
+        }
+
+
+
+        &__logo--small {
+            display: block;
+        }
+    }
 }

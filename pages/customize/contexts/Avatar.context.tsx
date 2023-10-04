@@ -1,4 +1,4 @@
-import { ReactNode, SetStateAction, createContext, useState, Dispatch } from "react";
+import { ReactNode, SetStateAction, createContext, useState, Dispatch, useEffect } from "react";
 
 interface Avatar {
     avatar: File | null

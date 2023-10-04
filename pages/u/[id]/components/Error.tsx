@@ -1,8 +1,10 @@
-export function Error() {
+export function Error({ children }: { children: JSX.Element | string }) {
     return (
-        <div>
-            <h3>Ooops! Something went wron</h3>
-            <p>Looks like you do not have connection</p>
+        <div className="preview__error">
+            <div>
+                <h3 className="preview__error-title">Ooops! Something went wrong</h3>
+                {children}
+            </div>
         </div>
     )
 }

@@ -13,7 +13,6 @@ export default function Links() {
     const { error, handleValidate } = useValidateLinks()
     const { loading, request, successful } = useUpdateLinks()
 
-    console.log(links);
 
     function handleSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault()

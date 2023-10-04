@@ -1,0 +1,8 @@
+@use "../pages" as pages;
+@use "../components" as components;
+
+
+@media screen and (max-width: 592px) {
+    @include pages.customize572();
+    @include pages.preview572();
+}

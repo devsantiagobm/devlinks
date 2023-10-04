@@ -11,7 +11,7 @@ import { platforms } from "constant";
 import Link from "next/link";
 import { AiOutlineLink as LinkIcon } from "react-icons/ai"
 import { useIsOriginalUser, useAlertAtCopy } from "./hooks";
-import type { JoinedLink } from "./models";
+import type { JoinedLink } from "models";
 import { motion, AnimatePresence } from "framer-motion";
 import { Error as PreviewError } from "./components/Error";
 
@@ -21,7 +21,11 @@ export default function Preview({ links: uncompletedLink, error, profile }: Prop
     const { asPath } = useRouter()
 
     if (error) {
-        return <PreviewError />
+        return (
+            <PreviewError>
+                <p>{error}</p>
+            </PreviewError>
+        )
     }
 
     const links: JoinedLink[] = uncompletedLink?.map((link) => ({
@@ -29,8 +33,6 @@ export default function Preview({ links: uncompletedLink, error, profile }: Prop
         ...link,
     })) ?? [];
 
-
-    console.log(links);
 
 
     const { name, description, avatar } = profile || {}

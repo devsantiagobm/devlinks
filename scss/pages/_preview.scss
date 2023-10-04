@@ -2,7 +2,7 @@
 
     &__box {
         margin: 5dvh auto 10dvh;
-        width: clamp(300px, 50dvw, 900px);
+        width: clamp(320px, 50dvw, 900px);
         max-width: 100%;
     }
 
@@ -85,12 +85,20 @@
 
     &__links {
         display: flex;
+        max-width: 100%;
         flex-direction: column;
         gap: 16px;
+
+
+        &>li {
+            max-width: 100%;
+        }
     }
 
     &__link {
         transition: transform .15s ease;
+        max-width: 100%;
+        display: block;
         position: relative;
         border-radius: 8px;
         padding: 16px;
@@ -127,7 +135,7 @@
             text-align: center;
             color: var(--light-gray);
             justify-content: space-between;
-
+            max-width: 100%;
         }
 
         &-user {
@@ -180,12 +188,12 @@
 
     &.preview--mock {
 
-        .preview__link{
-            &:hover{
+        .preview__link {
+            &:hover {
                 transform: none;
             }
-        
-            &::before{
+
+            &::before {
                 box-shadow: none;
             }
         }
@@ -207,13 +215,14 @@
             max-width: 30ch;
         }
 
-        .preview__link-information{
+        .preview__link-information--skeleton {
             color: transparent;
         }
 
         .preview__box {
             margin: 3dvh auto 10dvh;
             width: 100%;
+            max-width: 100%;
         }
 
         .preview__share {
@@ -269,4 +278,62 @@
 
 
 
+}
+
+
+
+@mixin preview972 {
+    .preview {
+
+        &__box {
+            width: clamp(320px, 70dvw, 900px);
+        }
+
+
+
+        &__link-information {
+            display: flex;
+            justify-content: flex-start;
+            gap: 8px;
+        }
+
+    }
+}
+
+
+@mixin preview572 {
+    .preview {
+
+
+        &__box {
+            width: clamp(280px, 85dvw, 500px);
+        }
+
+        &__link-user {
+            white-space: nowrap;
+            max-width: 20ch;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+
+        &__share {
+            aspect-ratio: 1;
+        }
+
+        &__share-text {
+            display: none;
+        }
+
+
+
+        &__share {
+            
+
+            &:hover &-icon {
+                transform: translateX(0);
+                
+            }
+        }
+    }
 }

@@ -15,8 +15,8 @@ export default function Profile() {
     const inputFile = useRef<HTMLInputElement | null>(null)
     const { request, error, successful, loading } = useUpdateUser()
     const { profile, setProfile } = useContextUser()
-    const { originalAvatar, setOriginalAvatar, preview } = useContextAvatar()
-    const avatar = profile?.avatar
+    const { originalAvatar, setOriginalAvatar, preview, avatar } = useContextAvatar()
+    const defaultAvatar = profile?.avatar
 
     function handleSubmit(e: FormEvent<HTMLFormElement>) {
         const { error } = formValidation(e)
@@ -34,6 +34,8 @@ export default function Profile() {
 
         setOriginalAvatar(files[0])
 
+        // In case user selects the same image twice, we have to reset the value of the input because this function only runs when input file value changes 
+        e.currentTarget.value = ""
     }
 
     function handleChange(e: ChangeEvent<HTMLInputElement>, name: keyof Profile) {
@@ -45,7 +47,6 @@ export default function Profile() {
             }
         })
     }
-
 
 
     return (
@@ -88,7 +89,7 @@ export default function Profile() {
                         <Image className="customize__avatar"
                             width={200}
                             height={200}
-                            src={(preview ? preview : avatar) ?? ""}
+                            src={(preview ? preview : defaultAvatar) ?? ""}
                             alt="User's avatar" />
 
                     </label>

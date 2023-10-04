@@ -5,4 +5,9 @@
     justify-content: center;
     align-items: center;
     gap: 8px;
+    text-align: center;
+
+    &-title{
+        color: var(--red);
+    }
 }
