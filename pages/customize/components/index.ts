@@ -5,3 +5,4 @@ export { default as Nav } from './Nav';
 export { default as Preview } from './Preview';
 export { default as Profile } from './Profile';
 export { default as SuccessfulMessage } from './SuccessfulMessage';
+export { default as Link } from './Link';

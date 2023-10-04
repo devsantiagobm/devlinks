@@ -11,7 +11,7 @@ interface Props {
     index: number
 }
 
-export function Link({ link, index }: Props) {
+export default function Link({ link, index }: Props) {
     const { dispatchLinks } = useContextUser()
     const uniqueId = useRef(Math.random().toFixed(5).slice(2));
     const selectedPlatform = platforms.find(({ id }) => id === link.platform)
