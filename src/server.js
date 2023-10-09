@@ -24,10 +24,9 @@ class Server {
 
     routes() {
 
-        // The application is deployed in a domain with other application. To avoid problems with the routes, we're gonna use the prefix /devlinks/api in all our routes
-        this.app.use("/devlinks/api/auth", require("/src/routes/auth.route"))
-        this.app.use("/devlinks/api/user", require("/src/routes/user.route"))
-        this.app.use("/devlinks/api/link", require("/src/routes/link.route"))
+        this.app.use("/auth", require("/src/routes/auth.route"))
+        this.app.use("/user", require("/src/routes/user.route"))
+        this.app.use("/link", require("/src/routes/link.route"))
 
         this.app.use((req, res) => res.status(404).json({ "message": "Page not found" }))
     }
