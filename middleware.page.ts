@@ -6,7 +6,6 @@ export async function middleware(request: NextRequest) {
     const { pathname } = request.nextUrl
     const APP_ROUTES = { ...AUTH_ROUTES, ...NO_AUTH_ROUTES }
 
-
     if (pathname in APP_ROUTES) {
 
         const token = request.cookies.get(COOKIES_NAMES["auth_token"])?.value
