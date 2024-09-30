@@ -14,6 +14,7 @@ import { useIsOriginalUser, useAlertAtCopy } from "./hooks";
 import type { JoinedLink } from "models";
 import { motion, AnimatePresence } from "framer-motion";
 import { Error as PreviewError } from "./components/Error";
+import Image from "next/image";
 
 export default function Preview({ links: uncompletedLink, error, profile }: Props) {
     const { isOriginalUser } = useIsOriginalUser()
@@ -69,8 +70,7 @@ export default function Preview({ links: uncompletedLink, error, profile }: Prop
 
 
                 <picture className="preview__picture">
-                    <img className="preview__avatar"
-                        src={avatar} alt={`${name}'s avatar`} />
+                    <Image className="preview__avatar" src={avatar ?? ""} alt={`${name}'s avatar`} width={164} height={164} />
                 </picture>
 
                 <h2 className={`preview__title ${!name && "preview__title-skeleton skeleton"}`}> {name} </h2>

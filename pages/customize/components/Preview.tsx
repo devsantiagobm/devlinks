@@ -5,6 +5,7 @@ import { BiArrowBack as BackIcon } from "react-icons/bi"
 import { platforms } from "constant";
 import { useContextUser, useContextAvatar } from "../hooks";
 import { JoinedLink } from "models";
+import Image from "next/image";
 
 export default function Preview() {
     const imageMockup = useRef<HTMLImageElement>(null)
@@ -75,7 +76,7 @@ function PreviewContent() {
             </header>
 
             <picture className="preview__picture skeleton">
-                <img className="preview__avatar" src={preview ? preview : avatar} />
+                <Image width={100} height={100} className="preview__avatar" src={(preview ? preview : avatar) ?? ""} alt="Avatar" />
             </picture>
 
             <h2 className={`preview__title ${!name && "preview__title-skeleton skeleton"}`}> {name ? name : "Default"}</h2>
