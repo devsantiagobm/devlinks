@@ -9,6 +9,7 @@ export async function middleware(request: NextRequest) {
     if (pathname in APP_ROUTES) {
 
         const token = request.cookies.get(COOKIES_NAMES["auth_token"])?.value
+        console.log({ token });
         const tokenIsValid = await isValidToken(token ?? "");
 
         if (!tokenIsValid && pathname in AUTH_ROUTES) {
